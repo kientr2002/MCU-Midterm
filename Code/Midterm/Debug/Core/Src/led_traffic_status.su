@@ -1,0 +1,4 @@
+led_traffic_status.c:9:6:set_default	8	static
+led_traffic_status.c:15:6:set_red	8	static
+led_traffic_status.c:20:6:set_green	8	static
+led_traffic_status.c:26:6:set_yellow	8	static

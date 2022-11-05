@@ -1,0 +1,19 @@
+/*
+ * led_status.h
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: ADMIN
+ */
+
+#ifndef INC_LED_TRAFFIC_STATUS_H_
+#define INC_LED_TRAFFIC_STATUS_H_
+
+#include "main.h"
+
+void set_default();
+void set_red();
+void set_yellow();
+void set_green();
+
+
+#endif /* INC_LED_TRAFFIC_STATUS_H_ */
