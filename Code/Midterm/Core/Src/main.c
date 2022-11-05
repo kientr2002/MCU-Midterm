@@ -25,7 +25,7 @@
 #include "software_timer.h"
 #include "button.h"
 #include "fsm_simple_buttons.h"
-
+#include "led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,8 +98,10 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
  status= RESET;
+ ledstate = 0;
   while (1)
   {
+	  led_blinky();
 	  fsm_simple_buttons_run();
     /* USER CODE END WHILE */
 

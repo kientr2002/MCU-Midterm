@@ -29,6 +29,6 @@
 #define timer 2000
 extern int status;
 extern int counter;
-
+int ledstate;
 
 #endif /* INC_GLOBAL_H_ */

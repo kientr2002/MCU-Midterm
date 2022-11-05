@@ -1,0 +1,18 @@
+/*
+ * led.c
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: ADMIN
+ */
+
+#include "led.h"
+
+void led_blinky(){
+	switch(LED_STATE){
+	case TURN_ON:
+		break;
+	case TURN_OFF:
+		break;
+
+	}
+}
