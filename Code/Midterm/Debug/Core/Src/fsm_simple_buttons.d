@@ -1,5 +1,6 @@
-Core/Src/led_traffic_status.o: ../Core/Src/led_traffic_status.c \
- ../Core/Inc/led_traffic_status.h ../Core/Inc/main.h \
+Core/Src/fsm_simple_buttons.o: ../Core/Src/fsm_simple_buttons.c \
+ ../Core/Inc/fsm_simple_buttons.h ../Core/Inc/global.h \
+ ../Core/Inc/software_timer.h ../Core/Inc/button.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -25,7 +26,13 @@ Core/Src/led_traffic_status.o: ../Core/Src/led_traffic_status.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 
-../Core/Inc/led_traffic_status.h:
+../Core/Inc/fsm_simple_buttons.h:
+
+../Core/Inc/global.h:
+
+../Core/Inc/software_timer.h:
+
+../Core/Inc/button.h:
 
 ../Core/Inc/main.h:
 

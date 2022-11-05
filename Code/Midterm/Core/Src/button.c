@@ -45,7 +45,7 @@ void subKeyProcess(){
 void getKeyInput(){
 	KeyReg0 = KeyReg1;
 	KeyReg1 = KeyReg2;
-	KeyReg2 = HAL_GPIO_ReadPin(button1_GPIO_Port, button1_Pin);
+	KeyReg2 = HAL_GPIO_ReadPin(RESET_GPIO_Port, RESET_Pin);
 	if((KeyReg0 == KeyReg1) && (KeyReg1 == KeyReg2)){
 		if(KeyReg3 != KeyReg2){
 			KeyReg3 = KeyReg2;

@@ -10,7 +10,6 @@
 void fsm_manual_run(){
 	switch(status){
 	case	MAN_RED:
-		set_red();
 		if(timer1_flag == 1){
 			status = AUTO_RED;
 			setTimer1(5000);
@@ -21,7 +20,6 @@ void fsm_manual_run(){
 		}
 		break;
 	case	MAN_GREEN:
-		set_green();
 		if(timer1_flag == 1){
 			status = AUTO_GREEN;
 			setTimer1(5000);
@@ -32,7 +30,6 @@ void fsm_manual_run(){
 		}
 		break;
 	case	MAN_YELLOW:
-		set_yellow();
 		if(timer1_flag == 1){
 			status = AUTO_YELLOW;
 			setTimer1(5000);
