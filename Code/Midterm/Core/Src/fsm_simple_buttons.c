@@ -5,36 +5,95 @@
  *      Author: ADMIN
  */
 #include <fsm_simple_buttons.h>
+int counter = 0;
+void fsm_simple_buttons_run (){
 
-void fsm_automatic_run(){
 	switch(status){
-	case	INIT:
+	case INIT:
 		//TO DO
-		setTimer1(5000);
-		break;
-	case	AUTO_RED:
-		//TODO
-		if(timer1_flag == 1){
-			status = AUTO_GREEN;
-			setTimer1(3000);
+		resetDisplay7SEG();
+		if(isButtonRESETpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = RESET;
 		}
-		if(isButton1Pressed()==1){
-			status = MAN_RED;
-			setTimer1(1000);
+		else if(isButtonINCpressed() == 1){
+			counter = 1;
+			display7SEG(counter);
+			status = INC;
+		} else
+			if (isButtonDECpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = DEC;
+		}
+		else {
+			//NOTHING
 		}
 		break;
-	case	AUTO_GREEN:
-		//TODO
-		if(timer1_flag == 1){
-			status = AUTO_YELLOW;
-			setTimer1(2000);
+	case RESET:
+		//TO DO
+		if(isButtonRESETpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = RESET;
+		}
+		else if(isButtonINCpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = INC;
+		} else
+			if (isButtonDECpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = DEC;
+		}
+		else {
+			//NOTHING
 		}
 		break;
-	case	AUTO_YELLOW:
-		//TODO
-		if(timer1_flag == 1){
-			status = AUTO_RED;
-			setTimer1(5000);
+	case INC:
+		//TO DO
+		if(isButtonRESETpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = RESET;
+		}
+		else if(isButtonINCpressed() == 1){
+			counter++;
+			if(counter == 10) counter = 0;
+			display7SEG(counter);
+			status = INC;
+		} else
+			if (isButtonDECpressed() == 1){
+			counter--;
+			display7SEG(counter);
+			status = DEC;
+		}
+		else {
+			//NOTHING
+		}
+		break;
+	case DEC:
+		//TO DO
+		if(isButtonRESETpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = RESET;
+		}
+		else if(isButtonINCpressed() == 1){
+			counter++;
+			display7SEG(counter);
+			status = INC;
+		} else
+			if (isButtonDECpressed() == 1){
+			counter--;
+			if(counter == -1) counter = 9;
+			display7SEG(counter);
+			status = DEC;
+		}
+		else {
+			//NOTHING
 		}
 		break;
 	default:

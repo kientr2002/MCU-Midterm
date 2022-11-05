@@ -2,3 +2,5 @@
 1667577371052	Delete resource 'Midterm'
 1667614588687	Delete resource 'Midterm/Core/Inc/led_traffic_status.h'
 1667614593598	Delete resource 'Midterm/Core/Src/led_traffic_status.c'
+1667619793633	Delete resource 'Midterm/Core/Src/fsm_manual.c'
+1667619798377	Delete resource 'Midterm/Core/Inc/fsm_manual.h'

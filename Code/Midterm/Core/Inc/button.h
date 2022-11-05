@@ -13,10 +13,12 @@
 #define NORMAL_STATE GPIO_PIN_SET
 #define PRESSED_STATE GPIO_PIN_RESET
 
-int isButton1Pressed();
-int isButton2Pressed();
-int isButton3Pressed();
+int isButtonRESETpressed();
+int isButtonINCpressed();
+int isButtonDECpressed();
 
-void getKeyInput();
+void getKeyRESETinput();
+void getKeyINCinput();
+void getKeyDECinput();
 
 #endif /* INC_BUTTON_H_ */

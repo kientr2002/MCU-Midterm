@@ -10,8 +10,8 @@
 
 #include "main.h"
 
-void display7SEG(int value){
 
-}
+void resetDisplay7SEG();
+void display7SEG(int value);
 
 #endif /* INC_DISPLAY7SEG_H_ */

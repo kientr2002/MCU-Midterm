@@ -1,0 +1,23 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: ADMIN
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "software_timer.h"
+#include "button.h"
+#include "main.h"
+#include "display7SEG.h"
+
+#define RESET 0
+#define INC 1
+#define DEC 2
+
+extern int status;
+extern int counter;
+
+#endif /* INC_GLOBAL_H_ */

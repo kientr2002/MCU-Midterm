@@ -1,1 +1,2 @@
-display7SEG.h:13:6:display7SEG	16	static
+display7SEG.c:9:6:resetDisplay7SEG	8	static
+display7SEG.c:18:6:display7SEG	16	static

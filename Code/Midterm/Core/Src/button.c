@@ -5,65 +5,138 @@
  *      Author: ADMIN
  */
 #include "button.h"
-
+//RESET
+int TimerForKeyRESETPress = 200;
 int button1_flag = 0;
+int KeyRegRESET0 = NORMAL_STATE;
+int KeyRegRESET1 = NORMAL_STATE;
+int KeyRegRESET2 = NORMAL_STATE;
+int KeyRegRESET3 = NORMAL_STATE;
+//INC
+int TimerForKeyINCPress = 200;
 int button2_flag = 0;
+int KeyRegINC0 = NORMAL_STATE;
+int KeyRegINC1 = NORMAL_STATE;
+int KeyRegINC2 = NORMAL_STATE;
+int KeyRegINC3 = NORMAL_STATE;
+//DEC
+int TimerForKeyDECPress = 200;
 int button3_flag = 0;
+int KeyRegDEC0 = NORMAL_STATE;
+int KeyRegDEC1 = NORMAL_STATE;
+int KeyRegDEC2 = NORMAL_STATE;
+int KeyRegDEC3 = NORMAL_STATE;
 
-int KeyReg0 = NORMAL_STATE;
-int KeyReg1 = NORMAL_STATE;
-int KeyReg2 = NORMAL_STATE;
-int KeyReg3 = NORMAL_STATE;
-
-int TimerForKeyPress = 200;
-
-int isButton1Pressed(){
+//Button is press?
+int isButtonRESETpressed(){
 	if(button1_flag == 1){
 		button1_flag = 0;
 		return 1;
 	}
 	return 0;
 }
-int isButton2Pressed(){
+int isButtonINCpressed(){
 	if(button2_flag == 1){
 		button2_flag = 0;
 		return 1;
 	}
 	return 0;
 }
-int isButton3Pressed(){
+int isButtonDECpressed(){
 	if(button3_flag == 1){
 		button3_flag = 0;
 		return 1;
 	}
 	return 0;
 }
-void subKeyProcess(){
+
+
+//sub key
+void subKeyRESETProcess(){
 	//TODO
 	button1_flag = 1;
 }
-void getKeyInput(){
-	KeyReg0 = KeyReg1;
-	KeyReg1 = KeyReg2;
-	KeyReg2 = HAL_GPIO_ReadPin(RESET_GPIO_Port, RESET_Pin);
-	if((KeyReg0 == KeyReg1) && (KeyReg1 == KeyReg2)){
-		if(KeyReg3 != KeyReg2){
-			KeyReg3 = KeyReg2;
-			if(KeyReg2 == PRESSED_STATE){
+void subKeyINCProcess(){
+	//TODO
+	button2_flag = 1;
+}
+void subKeyDECProcess(){
+	//TODO
+	button3_flag = 1;
+}
+
+
+//Get key
+void getKeyRESETinput(){
+	KeyRegRESET0 = KeyRegRESET1;
+	KeyRegRESET1 = KeyRegRESET2;
+	KeyRegRESET2 = HAL_GPIO_ReadPin(RESET_GPIO_Port, RESET_Pin);
+	if((KeyRegRESET0 == KeyRegRESET1) && (KeyRegRESET1 == KeyRegRESET2)){
+		if(KeyRegRESET3 != KeyRegRESET2){
+			KeyRegRESET3 = KeyRegRESET2;
+			if(KeyRegRESET2 == PRESSED_STATE){
 				//TODO
-				subKeyProcess();
-				TimerForKeyPress = 200;
+				subKeyRESETProcess();
+				TimerForKeyRESETPress = 200;
 			}
 		} else {
-			TimerForKeyPress--;
-			if(TimerForKeyPress == 0){
+			TimerForKeyRESETPress--;
+			if(TimerForKeyRESETPress == 0){
 				//TODO
-				if(KeyReg2 == PRESSED_STATE){
-					subKeyProcess();
+				if(KeyRegRESET2 == PRESSED_STATE){
+					subKeyRESETProcess();
 				}
-				TimerForKeyPress = 200;
+				TimerForKeyRESETPress = 200;
 			}
 		}
 	}
 }
 
+void getKeyINCinput(){
+	KeyRegINC0 = KeyRegINC1;
+	KeyRegINC1 = KeyRegINC2;
+	KeyRegINC2 = HAL_GPIO_ReadPin(INC_GPIO_Port, INC_Pin);
+	if((KeyRegINC0 == KeyRegINC1) && (KeyRegINC1 == KeyRegINC2)){
+		if(KeyRegINC3 != KeyRegINC2){
+			KeyRegINC3 = KeyRegINC2;
+			if(KeyRegINC2 == PRESSED_STATE){
+				//TODO
+				subKeyINCProcess();
+				TimerForKeyINCPress = 200;
+			}
+		} else {
+			TimerForKeyINCPress--;
+			if(TimerForKeyINCPress == 0){
+				//TODO
+				if(KeyRegINC2 == PRESSED_STATE){
+					subKeyINCProcess();
+				}
+				TimerForKeyINCPress = 200;
+			}
+		}
+	}
+}
+void getKeyDECinput(){
+	KeyRegDEC0 = KeyRegDEC1;
+	KeyRegDEC1 = KeyRegDEC2;
+	KeyRegDEC2 = HAL_GPIO_ReadPin(DEC_GPIO_Port, DEC_Pin);
+	if((KeyRegDEC0 == KeyRegDEC1) && (KeyRegDEC1 == KeyRegDEC2)){
+		if(KeyRegDEC3 != KeyRegDEC2){
+			KeyRegDEC3 = KeyRegDEC2;
+			if(KeyRegDEC2 == PRESSED_STATE){
+				//TODO
+				subKeyDECProcess();
+				TimerForKeyDECPress = 200;
+			}
+		} else {
+			TimerForKeyDECPress--;
+			if(TimerForKeyDECPress == 0){
+				//TODO
+				if(KeyRegDEC2 == PRESSED_STATE){
+					subKeyDECProcess();
+				}
+				TimerForKeyDECPress = 200;
+			}
+		}
+	}
+}

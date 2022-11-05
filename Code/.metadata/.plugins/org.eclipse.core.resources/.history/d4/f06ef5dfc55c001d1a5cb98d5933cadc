@@ -1,0 +1,38 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: ADMIN
+ */
+#include <fsm_simple_buttons.h>
+int counter = 0;
+void fsm_simple_buttons_run (){
+
+	switch(status){
+	case INIT:
+		//TO DO
+		resetDisplay7SEG();
+		if(isButtonRESETpressed() == 1){
+			counter = 0;
+			display7SEG(counter);
+			status = RESET;
+		} else if(isButtonINCpressed() == 1){
+			counter = 1;
+			display7SEG(counter);
+			status = INC;
+		}
+		break;
+	case RESET:
+		//TO DO
+
+		break;
+	case INC:
+		//TO DO
+		break;
+	case DEC:
+		//TO DO
+		break;
+	default:
+		break;
+	}
+}
