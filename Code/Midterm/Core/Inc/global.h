@@ -24,6 +24,9 @@
 #define HOLD_INC 3
 #define HOLD_DEC 4
 
+#define COUNTDOWN 5
+
+#define timer 2000
 extern int status;
 extern int counter;
 

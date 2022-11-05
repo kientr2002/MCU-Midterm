@@ -3,3 +3,5 @@
 1667607159779	Rename resource 'led_status.c'
 1667614925059	Rename resource 'fsm_automatic.h'
 1667614939163	Rename resource 'fsm_automatic.c'
+1667662401132	Rename resource 'fsm_hold_buttons.c'
+1667662418250	Rename resource 'fsm_hold_buttons.h'

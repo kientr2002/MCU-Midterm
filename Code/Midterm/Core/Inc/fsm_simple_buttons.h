@@ -1,5 +1,5 @@
 /*
- * fsm_automatic.h
+ * fsm_hold_buttons.h
  *
  *  Created on: Nov 5, 2022
  *      Author: ADMIN
@@ -12,4 +12,5 @@
 #include "global.h"
 
 void fsm_simple_buttons_run ();
+
 #endif /* INC_FSM_SIMPLE_BUTTONS_H_ */
