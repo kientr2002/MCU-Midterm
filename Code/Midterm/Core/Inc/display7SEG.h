@@ -9,7 +9,7 @@
 #define INC_DISPLAY7SEG_H_
 
 #include "main.h"
-
+#include "software_timer.h"
 
 void resetDisplay7SEG();
 void display7SEG(int value);

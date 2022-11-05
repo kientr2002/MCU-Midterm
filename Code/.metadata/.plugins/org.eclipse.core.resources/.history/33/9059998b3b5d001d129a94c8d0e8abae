@@ -1,0 +1,30 @@
+/*
+ * led.c
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: ADMIN
+ */
+
+#include "led.h"
+
+void led_blinky(){
+	switch(ledstate){
+	case TURN_ON:
+		//TO DO
+		setTimer1(1000);
+		ledstate = TURN_ON;
+		break;
+	case TURN_OFF:
+		//TO DO
+		if(timer1_flag == 1){
+			HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+			ledstate = TURN_OFF;
+			setTimer1(1000);
+		}
+		break;
+	default:
+		//TO DO
+
+		break;
+	}
+}

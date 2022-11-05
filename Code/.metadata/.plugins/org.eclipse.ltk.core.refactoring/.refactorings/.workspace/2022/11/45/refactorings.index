@@ -4,3 +4,7 @@
 1667614593598	Delete resource 'Midterm/Core/Src/led_traffic_status.c'
 1667619793633	Delete resource 'Midterm/Core/Src/fsm_manual.c'
 1667619798377	Delete resource 'Midterm/Core/Inc/fsm_manual.h'
+1667661530083	Delete resource 'Midterm/Core/Inc/button2.h'
+1667661538970	Delete resource 'Midterm/Core/Src/button2.c'
+1667662380203	Delete resource 'Midterm/Core/Src/fsm_simple_buttons.c'
+1667662387282	Delete resource 'Midterm/Core/Inc/fsm_simple_buttons.h'

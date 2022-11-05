@@ -13,13 +13,22 @@
 #include "main.h"
 #include "display7SEG.h"
 
+#define timerDefault 0
 
-#define INIT 0
-#define RESET 1
-#define INC 2
-#define DEC 3
 
+#define RESET 0
+#define INC 1
+#define DEC 2
+
+
+#define HOLD_INC 3
+#define HOLD_DEC 4
+
+#define COUNTDOWN 5
+
+#define timer 2000
 extern int status;
 extern int counter;
+int ledstate;
 
 #endif /* INC_GLOBAL_H_ */
