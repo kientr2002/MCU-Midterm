@@ -16,6 +16,7 @@ void resetDisplay7SEG(){
 	  HAL_GPIO_WritePin(LED7_6_GPIO_Port, LED7_6_Pin, SET);
 }
 void display7SEG(int value){
+	setTimer1(10);
 	switch(value){
 	case 0:
 		  HAL_GPIO_WritePin(LED7_0_GPIO_Port, LED7_0_Pin, RESET);
@@ -108,6 +109,7 @@ void display7SEG(int value){
 		  HAL_GPIO_WritePin(LED7_6_GPIO_Port, LED7_6_Pin, RESET);
 		  break;
 	default:
+
 		break;
 	}
 

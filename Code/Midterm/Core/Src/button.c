@@ -6,27 +6,26 @@
  */
 #include "button.h"
 //RESET
-int TimerForKeyRESETPress = 200;
+int TimerForKeyRESETPress = 0;
 int button1_flag = 0;
 int KeyRegRESET0 = NORMAL_STATE;
 int KeyRegRESET1 = NORMAL_STATE;
 int KeyRegRESET2 = NORMAL_STATE;
 int KeyRegRESET3 = NORMAL_STATE;
 //INC
-int TimerForKeyINCPress = 200;
+int TimerForKeyINCPress = 300;
 int button2_flag = 0;
 int KeyRegINC0 = NORMAL_STATE;
 int KeyRegINC1 = NORMAL_STATE;
 int KeyRegINC2 = NORMAL_STATE;
 int KeyRegINC3 = NORMAL_STATE;
 //DEC
-int TimerForKeyDECPress = 200;
+int TimerForKeyDECPress = 300;
 int button3_flag = 0;
 int KeyRegDEC0 = NORMAL_STATE;
 int KeyRegDEC1 = NORMAL_STATE;
 int KeyRegDEC2 = NORMAL_STATE;
 int KeyRegDEC3 = NORMAL_STATE;
-
 //Button is press?
 int isButtonRESETpressed(){
 	if(button1_flag == 1){
@@ -49,7 +48,14 @@ int isButtonDECpressed(){
 	}
 	return 0;
 }
-
+int isButtonINCholding(){
+	//TO DO
+	return 0;
+}
+int isButtonDECholding(){
+	//TO DO
+	return 0;
+}
 
 //sub key
 void subKeyRESETProcess(){
@@ -77,7 +83,7 @@ void getKeyRESETinput(){
 			if(KeyRegRESET2 == PRESSED_STATE){
 				//TODO
 				subKeyRESETProcess();
-				TimerForKeyRESETPress = 200;
+				TimerForKeyRESETPress = 0;
 			}
 		} else {
 			TimerForKeyRESETPress--;
@@ -86,7 +92,7 @@ void getKeyRESETinput(){
 				if(KeyRegRESET2 == PRESSED_STATE){
 					subKeyRESETProcess();
 				}
-				TimerForKeyRESETPress = 200;
+				TimerForKeyRESETPress = 0;
 			}
 		}
 	}
@@ -98,11 +104,12 @@ void getKeyINCinput(){
 	KeyRegINC2 = HAL_GPIO_ReadPin(INC_GPIO_Port, INC_Pin);
 	if((KeyRegINC0 == KeyRegINC1) && (KeyRegINC1 == KeyRegINC2)){
 		if(KeyRegINC3 != KeyRegINC2){
+
 			KeyRegINC3 = KeyRegINC2;
 			if(KeyRegINC2 == PRESSED_STATE){
 				//TODO
 				subKeyINCProcess();
-				TimerForKeyINCPress = 200;
+				TimerForKeyINCPress = 300;
 			}
 		} else {
 			TimerForKeyINCPress--;
@@ -111,10 +118,12 @@ void getKeyINCinput(){
 				if(KeyRegINC2 == PRESSED_STATE){
 					subKeyINCProcess();
 				}
-				TimerForKeyINCPress = 200;
+
+				TimerForKeyINCPress = 100;
 			}
 		}
 	}
+
 }
 void getKeyDECinput(){
 	KeyRegDEC0 = KeyRegDEC1;
@@ -126,7 +135,7 @@ void getKeyDECinput(){
 			if(KeyRegDEC2 == PRESSED_STATE){
 				//TODO
 				subKeyDECProcess();
-				TimerForKeyDECPress = 200;
+				TimerForKeyDECPress = 300;
 			}
 		} else {
 			TimerForKeyDECPress--;
@@ -135,7 +144,7 @@ void getKeyDECinput(){
 				if(KeyRegDEC2 == PRESSED_STATE){
 					subKeyDECProcess();
 				}
-				TimerForKeyDECPress = 200;
+				TimerForKeyDECPress = 100;
 			}
 		}
 	}
