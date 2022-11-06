@@ -1,4 +1,4 @@
-Core/Src/fsm_simple_buttoms.o: ../Core/Src/fsm_simple_buttoms.c \
+Core/Src/fsm_simple_buttons.o: ../Core/Src/fsm_simple_buttons.c \
  ../Core/Inc/fsm_simple_buttons.h ../Core/Inc/global.h \
  ../Core/Inc/software_timer.h ../Core/Inc/button.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \

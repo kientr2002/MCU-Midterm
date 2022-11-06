@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Midterm/Core/Src/fsm_simple_buttoms.c&apos; to &apos;fsm_simple_buttons.c&apos;" description="Rename resource &apos;fsm_simple_buttoms.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/fsm_simple_buttoms.c" name="fsm_simple_buttons.c" stamp="1667695355914" updateReferences="true"/>
+</session>
