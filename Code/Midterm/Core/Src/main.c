@@ -101,8 +101,10 @@ int main(void)
  ledstate = 0;
   while (1)
   {
-	  led_blinky();
-	  fsm_simple_buttons_run();
+//  led_blinky();
+//	  fsm_simple_buttons_run();
+//	  fsm_simple_buttons2_run();
+	  fsm_simple_buttons3_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

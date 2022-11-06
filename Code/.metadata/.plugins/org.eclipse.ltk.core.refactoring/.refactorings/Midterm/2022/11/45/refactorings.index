@@ -5,3 +5,5 @@
 1667614939163	Rename resource 'fsm_automatic.c'
 1667662401132	Rename resource 'fsm_hold_buttons.c'
 1667662418250	Rename resource 'fsm_hold_buttons.h'
+1667687916235	Rename resource 'fsm_simple_buttons.c'
+1667688262220	Rename resource 'fsm_simple_button3.h'

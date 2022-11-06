@@ -1,0 +1,13 @@
+/*
+ * fsm_simple_buttons3.h
+ *
+ *  Created on: Nov 6, 2022
+ *      Author: ADMIN
+ */
+
+#ifndef INC_FSM_SIMPLE_BUTTONS3_H_
+#define INC_FSM_SIMPLE_BUTTONS3_H_
+#include "fsm_simple_buttons.h"
+#include "global.h"
+void fsm_simple_buttons3_run ();
+#endif /* INC_FSM_SIMPLE_BUTTONS3_H_ */
