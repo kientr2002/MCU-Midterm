@@ -1,6 +1,6 @@
 "./Core/Src/button.o"
 "./Core/Src/display7SEG.o"
-"./Core/Src/fsm_simple_buttons.o"
+"./Core/Src/fsm_simple_buttoms.o"
 "./Core/Src/global.o"
 "./Core/Src/led.o"
 "./Core/Src/main.o"

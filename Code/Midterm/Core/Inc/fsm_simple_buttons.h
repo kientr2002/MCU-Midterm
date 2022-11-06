@@ -12,5 +12,7 @@
 #include "global.h"
 
 void fsm_simple_buttons_run ();
+void fsm_simple_buttons2_run();
+void fsm_simple_buttons3_run();
 
 #endif /* INC_FSM_SIMPLE_BUTTONS_H_ */
